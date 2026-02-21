@@ -92,7 +92,7 @@ public class Main {
 //            System.out.println("Факторіл з　" + number + "! дорівнює:" + factorial);
 //        }
 
-        // завд 5
+        // 任务 5
 
         int[] numbers = {15, 42, 8, 99, 23, 4, -5, -23, 76};
 
