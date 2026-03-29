@@ -113,7 +113,7 @@ class Dog extends Animal {
 }
 class Labrador extends Dog {
     @Override
-    public void makeSound() { System.out.println("Pes Patron (im labrador!"); }
+    public void makeSound() { System.out.println("Gav (im labrador)!"); }
 }
 
 class AnimalShelter {
@@ -137,6 +137,7 @@ class AnimalShelter {
 }
 
 public class Main {
+
     public static <T> Set<T> getUniqueElements(List<T> list) {
         return new HashSet<>(list);
     }
@@ -183,7 +184,7 @@ public class Main {
         System.out.println("Task 1");
         StudentRegistry registry = new StudentRegistry();
         registry.addStudent(new Student(101, "Petro"));
-        registry.addStudent(new Student(102, "Poroshenko"));
+        registry.addStudent(new Student(102, "Oleg"));
 
         registry.displayAll();
         System.out.println("Search for 101 " + registry.findStudent(101));
@@ -209,7 +210,7 @@ public class Main {
         System.out.println("There is in box: " + intBox.get());
 
         Box<String> strBox = new Box<>();
-        strBox.put("コミッサルちゃんの地下室");
+        strBox.put("Kawoon");
         System.out.println("There is in box: " + strBox.get());
 
 

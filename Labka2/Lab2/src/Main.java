@@ -23,11 +23,11 @@ public class Main {
 
         Queue<String> emailQueue = new LinkedList<>();
 
-        emailQueue.add("boss@company.com");
+        emailQueue.add("poroshenko.official@company.com");
         emailQueue.add("client@domain.com");
         emailQueue.add("friend@mail.com");
 
-        boolean isServerUp = false;
+        boolean isServerUp = true;
 
         while (true) {
             try {
