@@ -1,0 +1,36 @@
+### 1. Отримати список усіх рослин (має повернути Спатіфілум, створений в DataInitializer)
+GET http://localhost:8080/api/plants
+
+### 2. Отримати конкретну рослину за ID
+GET http://localhost:8080/api/plants/1
+
+### 3. Створити нову рослину (POST)
+POST http://localhost:8080/api/plants
+Content-Type: application/json
+
+{
+  "name": "Моя Пеларгонія",
+  "species": "Pelargonium"
+}
+
+### 4. Оновити існуючу рослину (PUT)
+PUT http://localhost:8080/api/plants/1
+Content-Type: application/json
+
+{
+  "name": "Великий Спатіфілум",
+  "species": "Spathiphyllum wallisii"
+}
+
+### 5. ПЕРЕВІРКА ВАЛІДАЦІЇ: Спроба створити рослину з помилками (POST)
+# 400 Bad Request
+POST http://localhost:8080/api/plants
+Content-Type: application/json
+
+{
+  "name": "",
+  "species": ""
+}
+
+### 6. Видалити рослину (DELETE)
+DELETE http://localhost:8080/api/plants/1

@@ -1,0 +1,39 @@
+### 1. Отримати список усіх рослин (має бути Спатіфілум)
+GET http://localhost:8080/api/plants
+
+### 2. Створити запис про догляд (CareLog)
+POST http://localhost:8080/api/care-logs
+Content-Type: application/json
+
+{
+  "plantId": "1",
+  "actionType": "Полив",
+  "date": "2026-04-27"
+}
+
+### 3. Отримати список користувачів
+GET http://localhost:8080/api/users
+
+### 4. Додати нову хворобу в довідник
+POST http://localhost:8080/api/diseases
+Content-Type: application/json
+
+{
+  "name": "Борошниста роса",
+  "treatment": "Обробити фунгіцидом"
+}
+
+### 5. Перевірити дані датчиків
+GET http://localhost:8080/api/sensor-data
+
+### 6. Відправити дані з датчика
+POST http://localhost:8080/api/sensor-data
+Content-Type: application/json
+
+{
+  "plantId": "1",
+  "moistureLevel": 45,
+  "lightLevel": 800
+}
+### 4. Видалити рослину (DELETE)
+DELETE http://localhost:8080/api/plants/5d18bd4c-cafb-468a-a741-4cb59baf43de

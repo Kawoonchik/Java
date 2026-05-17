@@ -1,0 +1,28 @@
+### 1. Демонстрація проблеми N+1 (Поганий запит)
+GET http://localhost:8080/api/plants/bad?page=0&size=5
+
+### 2. Вирішення проблеми N+1 (Хороший запит)
+GET http://localhost:8080/api/plants/good?page=0&size=5
+
+### 3. Отримати другу сторінку (Пагінація в дії)
+GET http://localhost:8080/api/plants/good?page=1&size=5
+
+### 4. Додати нову рослину (тепер з прив'язкою до існуючого користувача)
+POST http://localhost:8080/api/plants
+Content-Type: application/json
+
+{
+  "name": "Мій новий Фікус",
+  "species": "Ficus elastica",
+  "userId": 1
+}
+
+### 5. пустий
+POST http://localhost:8080/api/plants
+Content-Type: application/json
+
+{
+  "name": "",
+  "species": "Ficus elastica",
+  "userId": 1
+}

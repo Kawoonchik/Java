@@ -1,0 +1,125 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: developer
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: username
+                  type: varchar(255)
+              - column:
+                  name: email
+                  type: varchar(255)
+
+        - createTable:
+            tableName: plants
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+              - column:
+                  name: species
+                  type: varchar(255)
+              - column:
+                  name: user_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_plant_user
+                    references: users(id)
+
+        - createTable:
+            tableName: diseases
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+              - column:
+                  name: treatment
+                  type: varchar(255)
+
+        - createTable:
+            tableName: plant_diseases
+            columns:
+              - column:
+                  name: plant_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_pd_plant
+                    references: plants(id)
+              - column:
+                  name: disease_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_pd_disease
+                    references: diseases(id)
+
+        - createTable:
+            tableName: care_logs
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: plant_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_carelog_plant
+                    references: plants(id)
+              - column:
+                  name: action_type
+                  type: varchar(255)
+              - column:
+                  name: date
+                  type: varchar(255)
+
+        - createTable:
+            tableName: sensor_data
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: plant_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_sensor_plant
+                    references: plants(id)
+              - column:
+                  name: moisture_level
+                  type: int
+              - column:
+                  name: light_level
+                  type: int
