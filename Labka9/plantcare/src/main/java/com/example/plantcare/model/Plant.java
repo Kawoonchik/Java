@@ -38,7 +38,6 @@ public class Plant {
         this.species = species;
     }
 
-    // --- Всі необхідні Геттери та Сеттери ---
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
